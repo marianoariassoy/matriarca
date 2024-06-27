@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #475045;
+  --color-secondary: #a09990;
+}
+body {
+  color: var(--color-primary);
+  accent-color: var(--color-1);
+  font-optical-sizing: auto;
+}
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+.text-primary,
+.text-primary-hover:hover {
+  color: var(--color-primary);
+}
+.bg-primary,
+.bg-primary-hover:hover {
+  background-color: var(--color-primary);
+}
+.bg-primary-opacity {
+  background-color: rgba(71, 80, 69, 0.8);
+}
+.font-secondary {
+  font-family: 'Meow Script', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.indicators {
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+  bottom: 2rem;
+  left: 0;
+}
+.indicators li {
+  margin: 0 0.3rem !important;
+  text-align: center;
+}
+.indicators li button::before {
+  background: white !important;
+}
+.border-primary {
+  border-color: var(--color-primary);
+}
