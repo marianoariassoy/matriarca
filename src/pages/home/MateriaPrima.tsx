@@ -38,12 +38,12 @@ const MateriaPrima = () => {
 
   return (
     <section
-      className='lg:mt-12'
+      className='pb-12 lg:mt-12 lg:pb-20'
       id='materia-prima'
     >
-      <div className='bg-primary text-white py-16 lg:py-20 px-4 text-center'>
-        <h1 className='text-5xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
-        <h2 className='font-secondary text-4xl lg:text-7xl pl-60 -mt-6'>{texts[lan].title2}</h2>
+      <div className='bg-primary text-white py-14 lg:py-20 px-4 text-center'>
+        <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
+        <h2 className='font-secondary text-5xl lg:text-7xl'>{texts[lan].title2}</h2>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-14'>
         {data.map(item => (

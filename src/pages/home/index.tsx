@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Layout from '../../layout/Layout'
 import Blog from './Blog'
 import Comunidad from './Comunidad'
@@ -8,7 +9,12 @@ import Tienda from './Tienda'
 import Contacto from './Contacto'
 import Popup from './Popup'
 
-const index = () => {
+const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    document.title = 'Matriarca'
+  }, [])
+
   return (
     <Layout>
       <Hero />
@@ -23,4 +29,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

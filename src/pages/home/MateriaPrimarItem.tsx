@@ -1,4 +1,5 @@
 import Image from '../../components/Image'
+import { Link } from 'wouter'
 
 interface Props {
   id: number
@@ -14,16 +15,17 @@ const MateriaPrimarItem = ({ id, image, title, link }: Props) => {
         <Image
           src={image}
           alt={title}
+          color='#475045'
         />
       </div>
       <div className='flex flex-col gap-y-6 items-center justify-center'>
         <h2 className='font-black text-2xl uppercase tracking-widest'>{title}</h2>
-        <a
-          href='#'
-          className='text-primary font-bold rounded-full py-3 px-8 transition-colors scroll border border-primary tracking-widest bg-primary-hover hover:text-white'
+        <Link
+          href={`/materia-prima/${id}`}
+          className='text-primary font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover hover:text-white text-sm lg:text-base'
         >
           {link}
-        </a>
+        </Link>
       </div>
     </article>
   )

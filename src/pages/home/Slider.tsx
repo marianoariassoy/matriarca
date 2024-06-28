@@ -30,6 +30,7 @@ const Slider = ({ data }: Props) => {
           <Image
             src={item.image}
             alt=''
+            color='#475045'
           />
         </div>
       ))}

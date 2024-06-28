@@ -27,7 +27,7 @@ const Popup = () => {
       id='popup'
     >
       <div className='bg-white w-full max-w-3xl shadow-lg grid lg:grid-cols-2 relative text-sm lg:text-base'>
-        <div className='aspect-video lg:aspect-[3/3.5]'>
+        <div className='aspect-video lg:aspect-square'>
           <img
             src='https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=800'
             className='w-full h-full object-cover'

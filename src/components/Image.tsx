@@ -4,9 +4,10 @@ import BeatLoader from 'react-spinners/BeatLoader'
 interface Props {
   src: string
   alt: string
+  color: string
 }
 
-const ImageComponent = ({ src, alt }: Props) => {
+const ImageComponent = ({ src, alt, color }: Props) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const ImageComponent = ({ src, alt }: Props) => {
 
   return isLoading ? (
     <div className='h-full w-full flex justify-center items-center bg-primary'>
-      <BeatLoader color='#475045' />
+      <BeatLoader color={color} />
     </div>
   ) : (
     <img

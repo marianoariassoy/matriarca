@@ -1,24 +1,29 @@
+import { useLocation, Link } from 'wouter'
 import { Logo } from '../components/icons'
 import { menu, social } from '../components/data'
 import { useDataContext } from '../context/useDataContext'
 
 const Footer = () => {
   const { lan } = useDataContext()
+  const [location] = useLocation()
 
   return (
-    <footer className='bg-primary py-12 flex justify-between lg:items-center gap-x-3 px-6 lg:px-8 text-white'>
+    <footer
+      className='bg-primary py-12 flex justify-between lg:items-center gap-x-3 px-6 lg:px-8 text-white transition-colors'
+      id='footer'
+    >
       <div className='flex flex-col gap-y-6'>
         <nav className='flex flex-col gap-y-3 text-sm font-bold uppercase'>
           {menu.map((item, index) => (
-            <a
+            <Link
               key={index}
-              href={item.path}
+              href={location === '/' ? item.path : '/'}
               className={`hover:text-white/50 transition-all scroll tracking-widest ${
                 index > 0 && index < 4 ? 'hidden' : ''
               }`}
             >
               {item[lan].title}
-            </a>
+            </Link>
           ))}
         </nav>
         <nav className='flex gap-x-3'>

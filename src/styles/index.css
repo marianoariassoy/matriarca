@@ -16,10 +16,14 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  align-items: flex-end;
 }
 .text-primary,
 .text-primary-hover:hover {
   color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
 }
 .bg-primary,
 .bg-primary-hover:hover {
@@ -27,6 +31,13 @@ body {
 }
 .bg-primary-opacity {
   background-color: rgba(71, 80, 69, 0.8);
+}
+.bg-secondary-opacity {
+  background-color: rgba(137, 132, 125, 0.8);
+}
+.bg-secondary,
+.bg-secondary-hover:hover {
+  background-color: var(--color-secondary);
 }
 .font-secondary {
   font-family: 'Meow Script', cursive;
@@ -49,4 +60,9 @@ body {
 }
 .border-primary {
   border-color: var(--color-primary);
+}
+#comunidad {
+  background-image: url('/images/bg-comunidad.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

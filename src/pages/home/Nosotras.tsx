@@ -29,11 +29,11 @@ const Nosotras = () => {
 
   return (
     <section
-      className='py-12 px-4 lg:px-8'
+      className='py-12 px-6 lg:px-8'
       id='nosotras'
     >
       <div className='w-full max-w-4xl mx-auto text-center text-primary flex flex-col gap-y-8'>
-        <h1 className='text-5xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
+        <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
         <div className='font-medium text-sm lg:text-xl'>
           <p>
             Somos una distribuidora de productos de base cultural, que conecta los conocimientos ancestrales de las
@@ -76,6 +76,7 @@ const Nosotras = () => {
             <Image
               src={item.image}
               alt='nosotras'
+              color='#475045'
             />
           </article>
         ))}
