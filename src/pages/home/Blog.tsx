@@ -4,16 +4,16 @@ import { useState } from 'react'
 
 const Blog = () => {
   const { lan } = useDataContext()
-  const [showItems, setShowItems] = useState(2)
+  const [showItems, setShowItems] = useState(1)
 
   const texts = {
     es: {
-      link: 'ver todo',
+      link: 'ver más',
       button: 'leer más',
       link2: 'ver más'
     },
     en: {
-      link: 'see all',
+      link: 'see more',
       button: 'read more',
       link2: 'see more'
     }
@@ -54,6 +54,15 @@ const Blog = () => {
     }
   ]
 
+  const showMore = () => {
+    setShowItems(prev => prev + 1)
+    const windowHeight = window.innerHeight
+    const scrollY = window.scrollY
+    window.scrollTo({
+      top: windowHeight + scrollY,
+      behavior: 'smooth'
+    })
+  }
   return (
     <section
       className='bg-secondary'
@@ -66,7 +75,7 @@ const Blog = () => {
             <h2 className='font-secondary text-4xl lg:text-7xl'>Blog</h2>
           </div>
           <button
-            onClick={() => setShowItems(20)}
+            onClick={showMore}
             className='text-secondary font-bold rounded-full py-3 px-8 transition-colors tracking-widest bg-white hover:text-white bg-primary-hover hidden lg:block'
           >
             {texts[lan].link}
@@ -83,7 +92,7 @@ const Blog = () => {
           {showItems < data.length && (
             <div className='flex justify-center py-12'>
               <button
-                onClick={() => setShowItems(prev => prev + 2)}
+                onClick={showMore}
                 className='text-secondary font-bold rounded-full py-3 px-8 transition-colors tracking-widest bg-white hover:text-white bg-primary-hover'
               >
                 {texts[lan].link2}
