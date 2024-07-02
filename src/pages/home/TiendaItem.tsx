@@ -7,7 +7,7 @@ interface Props {
   link: string
 }
 
-const TiendaItem = ({ title, image, url, link }: Props) => {
+const TiendaItem = ({ title, image, link }: Props) => {
   return (
     <article className='relative aspect-[5/7]'>
       <div className='absolute z-20 bottom-0 p-6 lg:p-8 text-primary flex flex-col'>
