@@ -1,5 +1,6 @@
 import Image from '../../components/Image'
 import { Link } from 'wouter'
+import HTML from '../../hooks/useHTML'
 
 const BlogItem = ({ data, button }) => {
   return (
@@ -22,7 +23,9 @@ const BlogItem = ({ data, button }) => {
           />
         </div>
       </div>
-      <div className='px-6 lg:px-8'>{data.description}</div>
+      <div className='px-6 lg:px-8 '>
+        <HTML text={data.shortext} />
+      </div>
       <div className='px-6 lg:px-8'>
         <Link
           href={`/blog/${data.id}`}

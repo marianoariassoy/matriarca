@@ -2,7 +2,6 @@ import { Route, Switch } from 'wouter'
 import Home from './pages/home'
 import Blog from './pages/blog'
 import Materia from './pages/materia'
-
 import Error from './pages/error'
 
 function App() {

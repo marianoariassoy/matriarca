@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const apiUrl = 'https://soa.ar/api'
+const apiUrl = 'http://c2630690.ferozo.com/backend/api'
 import axios from 'axios'
 
 function useFetch(url: string) {

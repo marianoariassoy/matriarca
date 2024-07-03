@@ -1,28 +1,11 @@
 import Slider from './Slider'
-// import useFetch from '../../hooks/useFetch'
+import useFetch from '../../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { useDataContext } from '../../context/useDataContext'
 
 const Hero = () => {
-  // const { data, loading } = useFetch(`/portada`)
+  const { data, loading } = useFetch(`/portada`)
   const { lan } = useDataContext()
-  const loading = false
-
-  const data2 = [
-    {
-      id: 1,
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    },
-    {
-      id: 2,
-      image:
-        'https://images.pexels.com/photos/17897778/pexels-photo-17897778/free-photo-of-sentado-modelo-maqueta-silla.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    },
-    {
-      id: 3,
-      image: 'https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    }
-  ]
 
   const texts = {
     es: {
@@ -44,7 +27,7 @@ const Hero = () => {
       >
         {texts[lan].link}
       </a>
-      <div className='w-full h-full'>{loading ? <BeatLoader color='#475045' /> : <Slider data={data2} />}</div>
+      <div className='w-full h-full'>{loading ? <BeatLoader color='#475045' /> : <Slider data={data} />}</div>
     </section>
   )
 }

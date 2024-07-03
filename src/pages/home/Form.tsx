@@ -54,7 +54,7 @@ const Form = ({ lan }) => {
           <div className='grid grid-cols-2 gap-4 text-sm lg:text-base'>
             <div>
               <input
-                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium'
+                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium focus:outline-none focus:border-gray-400'
                 placeholder={dataContact[lan].name}
                 {...register('name', { required: true })}
               />
@@ -62,14 +62,14 @@ const Form = ({ lan }) => {
             </div>
             <div>
               <input
-                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium'
+                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium focus:outline-none focus:border-gray-400'
                 placeholder={dataContact[lan].city}
                 {...register('city')}
               />
             </div>
             <div>
               <input
-                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium'
+                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium focus:outline-none focus:border-gray-400'
                 placeholder={dataContact[lan].email}
                 {...register('email', { required: true })}
               />
@@ -77,14 +77,14 @@ const Form = ({ lan }) => {
             </div>
             <div>
               <input
-                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium'
+                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium focus:outline-none focus:border-gray-400'
                 placeholder={dataContact[lan].country}
                 {...register('country')}
               />
             </div>
             <div>
               <input
-                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium'
+                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium focus:outline-none focus:border-gray-400'
                 placeholder={dataContact[lan].phone}
                 {...register('phone', { required: true })}
               />
@@ -92,14 +92,14 @@ const Form = ({ lan }) => {
             </div>
             <div>
               <input
-                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium'
+                className='w-full border-b border-primary h-11 px-4 bg-transparent placeholder-current font-medium focus:outline-none focus:border-gray-400'
                 placeholder={dataContact[lan].subject}
                 {...register('subject')}
               />
             </div>
           </div>
           <textarea
-            className='w-full border border-t-0 border-primary placeholder-current font-medium bg-transparent h-52 p-4 mt-10'
+            className='w-full border border-t-0 border-primary placeholder-current font-medium bg-transparent h-52 p-4 mt-10 focus:outline-none focus:border-gray-400'
             placeholder={dataContact[lan].message}
             {...register('message')}
           />
@@ -109,7 +109,7 @@ const Form = ({ lan }) => {
             ) : (
               <button
                 type='submit'
-                className='text-primary font-bold rounded-full py-3 px-8 transition-colors scroll border border-primary tracking-widest bg-primary-hover hover:text-white'
+                className='text-primary font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover hover:text-white'
               >
                 {dataContact[lan].send}
               </button>

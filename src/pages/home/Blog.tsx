@@ -1,10 +1,20 @@
 import { useDataContext } from '../../context/useDataContext'
 import BlogItem from './BlogItem'
 import { useState } from 'react'
+import BeatLoader from 'react-spinners/BeatLoader'
+import useFetch from '../../hooks/useFetch'
 
 const Blog = () => {
   const { lan } = useDataContext()
+  const { data, loading } = useFetch(`/blog/${lan}`)
   const [showItems, setShowItems] = useState(1)
+
+  if (loading)
+    return (
+      <div className='w-full flex items-center justify-center my-20'>
+        <BeatLoader color='#475045' />
+      </div>
+    )
 
   const texts = {
     es: {
@@ -18,41 +28,6 @@ const Blog = () => {
       link2: 'see more'
     }
   }
-
-  const data = [
-    {
-      id: 1,
-      title: 'Mujeres wichi',
-      date: '21/05/24',
-      description:
-        'Las mujeres Wichí son suaves y elegantes. Caminan en el monte despacito, pero sin pausa. Ellas tejen las fibras del chaguar como parte de su cultura ancestral. Este saber se transmite de generación en generación y sus diseños surgen del universo cultural Wichí, un pueblo de cazadores-recolectores originario del monte, adaptado a los ritmos de la naturaleza. Por lo general, sus tejidos reproducen los animales del monte, con los cuales el cazador establece una relación íntima: hasta llega a identificarse con el espíritu de la presa. Algunos de los más usados son el lomo de suri, el ojo de lechuza, el pecho del pájaro carpintero o el cuero de víbora.',
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    },
-    {
-      id: 2,
-      title: 'Mujeres wichi',
-      date: '21/05/24',
-      description:
-        'Las mujeres Wichí son suaves y elegantes. Caminan en el monte despacito, pero sin pausa. Ellas tejen las fibras del chaguar como parte de su cultura ancestral. Este saber se transmite de generación en generación y sus diseños surgen del universo cultural Wichí, un pueblo de cazadores-recolectores originario del monte, adaptado a los ritmos de la naturaleza. Por lo general, sus tejidos reproducen los animales del monte, con los cuales el cazador establece una relación íntima: hasta llega a identificarse con el espíritu de la presa. Algunos de los más usados son el lomo de suri, el ojo de lechuza, el pecho del pájaro carpintero o el cuero de víbora.',
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    },
-    {
-      id: 3,
-      title: 'Mujeres wichi',
-      date: '21/05/24',
-      description:
-        'Las mujeres Wichí son suaves y elegantes. Caminan en el monte despacito, pero sin pausa. Ellas tejen las fibras del chaguar como parte de su cultura ancestral. Este saber se transmite de generación en generación y sus diseños surgen del universo cultural Wichí, un pueblo de cazadores-recolectores originario del monte, adaptado a los ritmos de la naturaleza. Por lo general, sus tejidos reproducen los animales del monte, con los cuales el cazador establece una relación íntima: hasta llega a identificarse con el espíritu de la presa. Algunos de los más usados son el lomo de suri, el ojo de lechuza, el pecho del pájaro carpintero o el cuero de víbora.',
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    },
-    {
-      id: 4,
-      title: 'Mujeres wichi',
-      date: '21/05/24',
-      description:
-        'Las mujeres Wichí son suaves y elegantes. Caminan en el monte despacito, pero sin pausa. Ellas tejen las fibras del chaguar como parte de su cultura ancestral. Este saber se transmite de generación en generación y sus diseños surgen del universo cultural Wichí, un pueblo de cazadores-recolectores originario del monte, adaptado a los ritmos de la naturaleza. Por lo general, sus tejidos reproducen los animales del monte, con los cuales el cazador establece una relación íntima: hasta llega a identificarse con el espíritu de la presa. Algunos de los más usados son el lomo de suri, el ojo de lechuza, el pecho del pájaro carpintero o el cuero de víbora.',
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=1920'
-    }
-  ]
 
   const showMore = () => {
     setShowItems(prev => prev + 1)
@@ -72,7 +47,7 @@ const Blog = () => {
         <div className='flex flex-col justify-center items-center gap-y-12 lg:h-screen pt-14'>
           <div className='flex flex-col items-center'>
             <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>Matriarca</h1>
-            <h2 className='font-secondary text-4xl lg:text-7xl'>Blog</h2>
+            <h2 className='font-secondary text-2xl lg:text-4xl'>blog</h2>
           </div>
           <button
             onClick={showMore}

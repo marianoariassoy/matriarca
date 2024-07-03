@@ -1,27 +1,16 @@
 import Image from '../../components/Image'
+import BeatLoader from 'react-spinners/BeatLoader'
+import useFetch from '../../hooks/useFetch'
 
-const Galeria = () => {
-  const data = [
-    {
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
-    {
-      image:
-        'https://images.pexels.com/photos/17897778/pexels-photo-17897778/free-photo-of-sentado-modelo-maqueta-silla.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
-    {
-      image: 'https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
-    {
-      image: 'https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
-    {
-      image: 'https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
-    {
-      image: 'https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=600'
-    }
-  ]
+const Galeria = ({ id }: { id: string }) => {
+  const { data, loading } = useFetch(`/imagenes/${id}`)
+
+  if (loading)
+    return (
+      <div className='w-full flex items-center justify-center my-20'>
+        <BeatLoader color='#475045' />
+      </div>
+    )
 
   return (
     <section className='grid grid-cols-2 lg:grid-cols-3'>

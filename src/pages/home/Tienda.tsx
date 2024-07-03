@@ -3,6 +3,7 @@ import TiendaItem from './TiendaItem'
 
 const Tienda = () => {
   const { lan } = useDataContext()
+  const url = 'http://c2630690.ferozo.com/backend/images-static/'
 
   const texts = {
     es: {
@@ -19,21 +20,19 @@ const Tienda = () => {
     {
       title: 'Hogar',
       title_en: 'Home',
-
-      image: 'https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: url + 'hogar.jpg',
       url: '#'
     },
     {
       title: 'Indumentaria',
       title_en: 'Clothing',
-      image:
-        'https://images.pexels.com/photos/17897778/pexels-photo-17897778/free-photo-of-sentado-modelo-maqueta-silla.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: url + 'indumentaria.jpg',
       url: '#'
     },
     {
       title: 'Capsulas',
       title_en: 'Capsules',
-      image: 'https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: url + 'capsulas.jpg',
       url: '#'
     }
   ]
