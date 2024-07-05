@@ -7,7 +7,7 @@ import BeatLoader from 'react-spinners/BeatLoader'
 
 const Nosotras = () => {
   const { lan } = useDataContext()
-  const url = 'http://c2630690.ferozo.com/backend/images-static/'
+  const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
   const { data, loading } = useFetch(`/textos/${lan}`)
 
   if (loading)

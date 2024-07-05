@@ -3,7 +3,7 @@ import TiendaItem from './TiendaItem'
 
 const Tienda = () => {
   const { lan } = useDataContext()
-  const url = 'http://c2630690.ferozo.com/backend/images-static/'
+  const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
 
   const texts = {
     es: {
