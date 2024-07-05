@@ -28,6 +28,8 @@ const Form = ({ lan }) => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
 
+    //sales@matriarca.org
+
     axios.post(' ', { ...data }).then(data => {
       if (data.data === 'success') {
         setSended(true)

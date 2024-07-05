@@ -21,19 +21,19 @@ const Tienda = () => {
       title: 'Hogar',
       title_en: 'Home',
       image: url + 'hogar.jpg',
-      url: '#'
+      url: 'https://tienda.matriarca.com.ar/hogar/'
     },
     {
       title: 'Indumentaria',
       title_en: 'Clothing',
       image: url + 'indumentaria.jpg',
-      url: '#'
+      url: 'https://tienda.matriarca.com.ar/indumentaria/'
     },
     {
       title: 'Capsulas',
       title_en: 'Capsules',
       image: url + 'capsulas.jpg',
-      url: '#'
+      url: 'https://tienda.matriarca.com.ar/capsulas-especiales/'
     }
   ]
 
@@ -52,7 +52,9 @@ const Tienda = () => {
       </div>
       <div className='flex justify-center mt-6'>
         <a
-          href='#'
+          href='https://tienda.matriarca.com.ar/productos/'
+          target='_blank'
+          rel='noopener noreferrer'
           className='text-primary font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover hover:text-white text-sm lg:text-base'
         >
           {texts[lan].link2}

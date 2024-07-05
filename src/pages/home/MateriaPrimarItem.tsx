@@ -11,7 +11,15 @@ interface Props {
 const MateriaPrimarItem = ({ id, image, title, link }: Props) => {
   return (
     <article className='flex flex-col gap-y-12 text-primary'>
-      <div className='aspect-square lg:aspect-[5/7] overflow-hidden'>
+      <div className='aspect-square lg:aspect-[5/7] overflow-hidden relative'>
+        <Link
+          href={`/materia-prima/${id}`}
+          target='_blank'
+          rel='noreferrer'
+          className='absolute h-full w-full z-10 backdrop-blur cursor-pointer opacity-0 hover:opacity-100  transition-opacity text-white text-6xl flex items-center justify-center'
+        >
+          +
+        </Link>
         <Image
           src={image}
           alt={title}

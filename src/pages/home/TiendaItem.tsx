@@ -7,14 +7,19 @@ interface Props {
   link: string
 }
 
-const TiendaItem = ({ title, image, link }: Props) => {
+const TiendaItem = ({ title, image, link, url }: Props) => {
   return (
-    <article className='relative aspect-[5/7]'>
-      <div className='absolute z-20 bottom-0 p-6 lg:p-8 text-primary flex flex-col'>
+    <article className='relative aspect-[5/7] text-primary hover:text-white transition-all'>
+      <div className='absolute z-20 bottom-0 p-6 lg:p-8 flex flex-col'>
         <h4 className='font-secondary text-2xl lg:text-4xl'>{link}</h4>
         <h2 className='font-black text-2xl lg:text-4xl uppercase'>{title}</h2>
       </div>
-      <div className='absolute h-full w-full z-10 backdrop-blur cursor-pointer opacity-0 hover:opacity-100  transition-opacity'></div>
+      <a
+        href={url}
+        target='_blank'
+        rel='noreferrer'
+        className='absolute h-full w-full z-10 backdrop-blur cursor-pointer opacity-0 hover:opacity-100  transition-all'
+      ></a>
       <Image
         src={image}
         alt={title}
