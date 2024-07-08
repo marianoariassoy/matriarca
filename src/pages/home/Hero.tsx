@@ -18,16 +18,18 @@ const Hero = () => {
 
   return (
     <section
-      className='h-screen w-screen flex items-center justify-center'
+      className='h-screen w-screen flex items-center justify-center bg-primary'
       id='hero'
     >
       <a
-        href='#tienda'
-        className='z-10 absolute text-white font-bold bg-black/30 rounded-full py-3 px-8 hover:bg-black transition-all scroll tracking-widest text-sm lg:text-base'
+        href='https://tienda.matriarca.com.ar/productos/'
+        target='_blank'
+        rel='noreferrer'
+        className='z-10 absolute text-white font-bold bg-black/30 rounded-full py-3 px-8 hover:bg-black transition-all tracking-widest text-sm lg:text-base fade-in-delay'
       >
         {texts[lan].link}
       </a>
-      <div className='w-full h-full'>{loading ? <BeatLoader color='#475045' /> : <Slider data={data} />}</div>
+      <div className='w-full h-full'>{loading ? <BeatLoader color='#FFFFFF' /> : <Slider data={data} />}</div>
     </section>
   )
 }

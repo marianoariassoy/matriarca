@@ -19,7 +19,7 @@ const ImageComponent = ({ src, alt, color }: Props) => {
   }, [src])
 
   return isLoading ? (
-    <div className='h-full w-full flex justify-center items-center bg-primary'>
+    <div className='h-full w-full flex justify-center items-center'>
       <BeatLoader color={color} />
     </div>
   ) : (

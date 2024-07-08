@@ -1,7 +1,13 @@
 import { useDataContext } from '../../context/useDataContext'
 import BeatLoader from 'react-spinners/BeatLoader'
 import useFetch from '../../hooks/useFetch'
-import HTML from '../../hooks/useHTML'
+import ComunidadItem1 from './ComunidadItem1'
+import ComunidadItem2 from './ComunidadItem2'
+import ComunidadItem3 from './ComunidadItem3'
+import ComunidadItem4 from './ComunidadItem4'
+import { Slide } from 'react-slideshow-image'
+import 'react-slideshow-image/dist/styles.css'
+import { Back, Forward } from '../../components/icons'
 
 const Comunidad = () => {
   const { lan } = useDataContext()
@@ -14,6 +20,25 @@ const Comunidad = () => {
       </div>
     )
 
+  const sliderProperties = {
+    autoplay: false,
+    transitionDuration: 400,
+    indicators: true,
+    arrows: true,
+    infinite: true,
+    pauseOnHover: false,
+    prevArrow: (
+      <button className='ml-12 top-0 left-auto right-20 flex justify-end lg:hover:ml-10 transition-all lg:right-auto lg:top-auto'>
+        <Back />
+      </button>
+    ),
+    nextArrow: (
+      <button className='mr-6 top-0 lg:mr-12 lg:hover:mr-10 transition-all lg:top-auto'>
+        <Forward />
+      </button>
+    )
+  }
+
   const texts = {
     es: {
       title: 'Comunidad',
@@ -24,34 +49,23 @@ const Comunidad = () => {
       title2: 'matriarca'
     }
   }
+
   return (
     <section
-      className='py-20 lg:py-32'
+      className='relative lg:h-screen w-screen comunidad-item py-12 lg:py-0'
       id='comunidad'
     >
-      <article>
-        <div className='w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 px-6'>
-          <div className='lg:w-1/3 flex items-end justify-center'>
-            <img
-              src='/images/img-comunidad-1.png'
-              alt='Imagen comunidad'
-              className='w-8/12 lg:w-full'
-            />
-          </div>
-          <div className='lg:w-2/3 flex flex-col justify-between gap-y-12'>
-            <div className='w-full flex flex-col items-center justify-center lg:mb-12'>
-              <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
-              <h2 className='font-secondary text-3xl lg:text-4xl'>{texts[lan].title2}</h2>
-            </div>
-            <div className='border-t border-primary lg:text-xl relative'>
-              <div className='absolute w-4 h-4 rounded-full bg-primary -top-2 -left-2'></div>
-              <div className='p-6'>
-                <HTML text={data[2].text} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
+      <div className='lg:absolute px-6 right-20 top-32 flex flex-col z-10'>
+        <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
+        <h2 className='font-secondary text-3xl lg:text-4xl'>{texts[lan].title2}</h2>
+      </div>
+
+      <Slide {...sliderProperties}>
+        <ComunidadItem1 data={data} />
+        <ComunidadItem2 />
+        <ComunidadItem3 data={data} />
+        <ComunidadItem4 data={data} />
+      </Slide>
     </section>
   )
 }

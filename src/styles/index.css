@@ -61,8 +61,18 @@ body {
 .border-primary {
   border-color: var(--color-primary);
 }
-#comunidad {
+.comunidad-item {
   background-image: url('/images/bg-comunidad.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+.comunidad-item-2 {
+  background-image: url('/images/comunidad-item2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media screen and (max-width: 800px) {
+  .comunidad-item-2 {
+    background-image: none;
+  }
 }

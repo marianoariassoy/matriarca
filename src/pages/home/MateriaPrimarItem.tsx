@@ -16,7 +16,7 @@ const MateriaPrimarItem = ({ id, image, title, link }: Props) => {
           href={`/materia-prima/${id}`}
           target='_blank'
           rel='noreferrer'
-          className='absolute h-full w-full z-10 backdrop-blur cursor-pointer opacity-0 hover:opacity-100  transition-opacity text-white text-6xl flex items-center justify-center'
+          className='absolute h-full w-full z-10 backdrop-blur cursor-pointer opacity-0 hover:opacity-100 transition-opacity text-white text-6xl flex items-center justify-center'
         >
           +
         </Link>

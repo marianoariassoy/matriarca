@@ -7,7 +7,6 @@ const NavMenu = () => {
   }
   return (
     <button
-      className='hover:text-white/50'
       id='nav-menu'
       onClick={openMenu}
     >

@@ -1,6 +1,7 @@
 #nav-menu {
   cursor: pointer;
   width: 30px;
+  margin-top: 0.25rem;
 }
 #nav-menu > span {
   background-color: currentColor;
