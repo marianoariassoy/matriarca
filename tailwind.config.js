@@ -6,5 +6,5 @@ export default {
       sans: 'Raleway, sans-serif'
     }
   },
-  plugins: []
+  plugins: [require('tailwindcss-animated')]
 }

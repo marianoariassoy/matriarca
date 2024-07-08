@@ -47,6 +47,7 @@ const Tienda = () => {
             url={item.url}
             link={texts[lan].link}
             title={lan === 'es' ? item.title : item.title_en}
+            index={index}
           />
         ))}
       </div>

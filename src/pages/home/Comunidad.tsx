@@ -28,12 +28,12 @@ const Comunidad = () => {
     infinite: true,
     pauseOnHover: false,
     prevArrow: (
-      <button className='ml-12 top-0 left-auto right-20 flex justify-end lg:hover:ml-10 transition-all lg:right-auto lg:top-auto'>
+      <button className='ml-12 top-0 z-50 left-auto right-20 flex justify-end transition-all lg:right-auto lg:top-auto hover:opacity-70'>
         <Back />
       </button>
     ),
     nextArrow: (
-      <button className='mr-6 top-0 lg:mr-12 lg:hover:mr-10 transition-all lg:top-auto'>
+      <button className='mr-6 top-0 z-50 lg:mr-12 transition-all lg:top-auto hover:opacity-70'>
         <Forward />
       </button>
     )

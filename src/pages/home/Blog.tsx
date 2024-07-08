@@ -3,11 +3,17 @@ import BlogItem from './BlogItem'
 import { useState } from 'react'
 import BeatLoader from 'react-spinners/BeatLoader'
 import useFetch from '../../hooks/useFetch'
+import { useInView } from 'react-intersection-observer'
 
 const Blog = () => {
   const { lan } = useDataContext()
   const { data, loading } = useFetch(`/blog/${lan}`)
   const [showItems, setShowItems] = useState(1)
+
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
 
   if (loading)
     return (
@@ -44,7 +50,12 @@ const Blog = () => {
       id='blog'
     >
       <div className='w-full grid grid-cols-1 lg:grid-cols-2 text-white'>
-        <div className='flex flex-col justify-center items-center gap-y-12 lg:h-screen pt-14'>
+        <div
+          className={`flex flex-col justify-center items-center gap-y-12 lg:h-screen pt-14 ${
+            inView ? 'animate-fade-right' : 'opacity-0'
+          }`}
+          ref={ref}
+        >
           <div className='flex flex-col items-center'>
             <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>Matriarca</h1>
             <h2 className='font-secondary text-2xl lg:text-4xl'>blog</h2>
@@ -56,7 +67,11 @@ const Blog = () => {
             {texts[lan].link}
           </button>
         </div>
-        <div className='flex flex-col lg:border-l border-white lg:pt-12 pb-12'>
+        <div
+          className={`flex flex-col lg:border-l border-white lg:pt-12 pb-12 ${
+            inView ? 'animate-fade-left' : 'opacity-0'
+          }`}
+        >
           {data.slice(0, showItems).map(item => (
             <BlogItem
               key={item.id}

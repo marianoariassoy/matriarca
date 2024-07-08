@@ -1,3 +1,5 @@
+import { useInView } from 'react-intersection-observer'
+
 const ComunidadItem2 = () => {
   const data = [
     {
@@ -26,12 +28,25 @@ const ComunidadItem2 = () => {
     }
   ]
 
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
   return (
-    <article className='lg:h-screen w-screen py-20 lg:py-32 px-6 lg:px-12'>
+    <article
+      className='lg:h-screen w-screen py-20 lg:py-32 px-6 lg:px-12'
+      ref={ref}
+    >
       <div className='h-full w-full max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 comunidad-item-2'>
         {data.map((item, index) => (
           <article
-            className='flex flex-col'
+            className={`flex flex-col ${
+              index === 1
+                ? 'animate-delay-500'
+                : index === 2
+                ? 'animate-delay-1000'
+                : index === 3 && 'animate-delay-[1500ms]'
+            } ${inView ? 'animate-fade-right' : 'opacity-0'}`}
             key={index}
           >
             <div className='relative pb-8 h-1/2 border-b-2 border-primary flex items-end'>
@@ -43,8 +58,8 @@ const ComunidadItem2 = () => {
               />
             </div>
             <div className='flex flex-col gap-y-3 py-6 lg:p-6'>
-              <div className='text-4xl lg:text-5xl font-bold'>{item.number}</div>
-              <div className='uppercase lg:text-xl font-medium tracking-wider'>{item.title}</div>
+              <div className='text-4xl lg:text-6xl font-bold'>{item.number}</div>
+              <div className='uppercase font-medium tracking-wider'>{item.title}</div>
             </div>
           </article>
         ))}

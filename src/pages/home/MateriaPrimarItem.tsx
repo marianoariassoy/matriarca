@@ -1,16 +1,28 @@
 import Image from '../../components/Image'
 import { Link } from 'wouter'
+import { useInView } from 'react-intersection-observer'
 
 interface Props {
   id: number
   image: string
   title: string
   link: string
+  index: number
 }
 
-const MateriaPrimarItem = ({ id, image, title, link }: Props) => {
+const MateriaPrimarItem = ({ id, image, title, link, index }: Props) => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
+
   return (
-    <article className='flex flex-col gap-y-12 text-primary'>
+    <article
+      className={`flex flex-col gap-y-12 text-primary
+      ${index === 1 ? 'animate-delay-1000' : index === 2 && 'animate-delay-500'}
+      ${inView ? 'animate-fade' : 'opacity-0'}`}
+      ref={ref}
+    >
       <div className='aspect-square lg:aspect-[5/7] overflow-hidden relative'>
         <Link
           href={`/materia-prima/${id}`}
