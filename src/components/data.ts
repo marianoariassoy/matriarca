@@ -98,12 +98,12 @@ export const menu = [
 export const social = [
   {
     title: 'Facebook',
-    url: 'https://www.instagram.com/matriarca.artenativo',
+    url: 'https://www.facebook.com/matriarca.com.ar',
     icon: Facebook()
   },
   {
     title: 'Instagram',
-    url: 'https://www.facebook.com/matriarca.com.ar',
+    url: 'https://www.instagram.com/matriarca.artenativo',
     icon: Instagram()
   }
 ]

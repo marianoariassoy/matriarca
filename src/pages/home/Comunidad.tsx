@@ -56,7 +56,7 @@ const Comunidad = () => {
       id='comunidad'
     >
       <div className='lg:absolute px-6 right-20 top-32 flex flex-col z-10'>
-        <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
+        <h1 className='text-4xl lg:text-6xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
         <h2 className='font-secondary text-3xl lg:text-4xl'>{texts[lan].title2}</h2>
       </div>
 

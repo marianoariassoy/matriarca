@@ -18,14 +18,14 @@ const Hero = () => {
 
   return (
     <section
-      className='h-screen w-screen flex items-center justify-center bg-primary'
+      className='h-screen w-screen flex items-end pb-20 justify-center bg-primary'
       id='hero'
     >
       <a
         href='https://tienda.matriarca.com.ar/productos/'
         target='_blank'
         rel='noreferrer'
-        className='z-10 absolute text-white font-bold bg-black/30 rounded-full py-3 px-8 hover:bg-black transition-all tracking-widest text-sm lg:text-base fade-in-delay'
+        className='z-10 absolute border border-white text-white font-bold bg-primary-opacity rounded-full py-3 px-8 hover:bg-transparent transition-all tracking-widest text-sm lg:text-base fade-in-delay'
       >
         {texts[lan].link}
       </a>

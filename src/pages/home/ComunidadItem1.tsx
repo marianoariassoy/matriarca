@@ -9,7 +9,7 @@ const ComunidadItem1 = ({ data }) => {
 
   return (
     <article
-      className='lg:h-screen w-screen  py-20 lg:py-32 px-6 lg:px-12'
+      className='lg:h-screen w-screen py-20 lg:py-32 px-6 lg:px-12'
       ref={ref}
     >
       <div className='lg:h-full w-full max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center'>

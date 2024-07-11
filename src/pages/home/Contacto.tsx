@@ -1,8 +1,8 @@
+import { useInView } from 'react-intersection-observer'
 import { useEffect } from 'react'
 import Form from './Form'
 import { useDataContext } from '../../context/useDataContext'
 import scroll from '../../utils/scroll'
-import { useInView } from 'react-intersection-observer'
 
 const Contacto = () => {
   const { lan } = useDataContext()

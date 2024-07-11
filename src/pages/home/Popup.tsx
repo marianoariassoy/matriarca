@@ -12,6 +12,7 @@ const Popup = () => {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
   const [showPopup, setShowPopup] = useState(false)
+  const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
 
   useEffect(() => {
     const elementoMostrado = localStorage.getItem('showPopupMatriarca')
@@ -65,62 +66,60 @@ const Popup = () => {
 
   return (
     <>
-      {showPopup && (
-        <div
-          className='fade-in-delay w-full h-full fixed top-0 left-0 z-50 bg-primary-opacity flex items-center justify-center p-6'
-          id='popup'
-        >
-          <div className='bg-white w-full max-w-3xl shadow-lg grid lg:grid-cols-2 relative text-sm lg:text-base'>
-            <div className='aspect-video lg:aspect-[1/1.1]'>
-              <img
-                src='https://images.pexels.com/photos/4456815/pexels-photo-4456815.jpeg?auto=compress&cs=tinysrgb&w=800'
-                className='w-full h-full object-cover'
-              />
-            </div>
-            <div className='flex flex-col gap-y-3 p-8'>
-              <div className='flex-1 uppercase font-bold text-center flex items-center justify-center'>
-                <span>{texts[lan].text}</span>
-              </div>
-              <div className='flex items-end'>
-                {error ? (
-                  <div className='font-bold text-center px-8'>{dataContact[lan].error}</div>
-                ) : sended ? (
-                  <div className='font-bold text-center px-8'>{dataContact[lan].thanks}</div>
-                ) : (
-                  <form
-                    onSubmit={handleSubmit(onSubmit)}
-                    className='w-full  flex flex-col gap-y-6 items-center justify-center'
-                  >
-                    <div className='w-full'>
-                      <input
-                        className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current'
-                        placeholder={texts[lan].textfield}
-                        {...register('email', { required: true })}
-                      />
-                      {errors.email && <Error />}
-                    </div>
-                    <div>
-                      {sending ? (
-                        <BeatLoader />
-                      ) : (
-                        <button className='font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover text-primary hover:text-white text-sm'>
-                          {texts[lan].buttomtext}
-                        </button>
-                      )}
-                    </div>
-                  </form>
-                )}
-              </div>
-            </div>
-            <button
-              className='absolute top-6 right-6 font-bold text-2xl hover:text-black'
-              onClick={closePopup}
-            >
-              <Close />
-            </button>
+      <div
+        className='fade-in-delay w-full h-full fixed top-0 left-0 z-50 bg-primary-opacity flex items-center justify-center p-6'
+        id='popup'
+      >
+        <div className='bg-white w-full max-w-3xl shadow-lg grid lg:grid-cols-2 relative text-sm lg:text-base'>
+          <div className='aspect-video lg:aspect-[1/1.1]'>
+            <img
+              src={url + 'popup.jpg'}
+              className='w-full h-full object-cover'
+            />
           </div>
+          <div className='flex flex-col gap-y-3 p-8'>
+            <div className='flex-1 uppercase font-bold text-center flex items-center justify-center'>
+              <span>{texts[lan].text}</span>
+            </div>
+            <div className='flex items-end'>
+              {error ? (
+                <div className='font-bold text-center px-8'>{dataContact[lan].error}</div>
+              ) : sended ? (
+                <div className='font-bold text-center px-8'>{dataContact[lan].thanks}</div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className='w-full  flex flex-col gap-y-6 items-center justify-center'
+                >
+                  <div className='w-full'>
+                    <input
+                      className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current'
+                      placeholder={texts[lan].textfield}
+                      {...register('email', { required: true })}
+                    />
+                    {errors.email && <Error />}
+                  </div>
+                  <div>
+                    {sending ? (
+                      <BeatLoader />
+                    ) : (
+                      <button className='font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover text-primary hover:text-white text-sm'>
+                        {texts[lan].buttomtext}
+                      </button>
+                    )}
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+          <button
+            className='absolute top-6 right-6 font-bold text-2xl hover:text-black'
+            onClick={closePopup}
+          >
+            <Close />
+          </button>
         </div>
-      )}
+      </div>
     </>
   )
 }

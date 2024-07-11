@@ -18,7 +18,7 @@ const Nosotras = () => {
 
   const [ref2, inView2] = useInView({
     triggerOnce: false,
-    threshold: 0.3
+    threshold: 0.1
   })
 
   if (loading)
@@ -53,6 +53,7 @@ const Nosotras = () => {
     <section
       className='py-12 px-6 lg:px-8'
       id='nosotras'
+      ref={ref}
     >
       <div className='w-full max-w-4xl mx-auto text-center text-primary flex flex-col gap-y-8'>
         <h1
@@ -63,17 +64,13 @@ const Nosotras = () => {
         >
           {texts[lan].title}
         </h1>
-        <div
-          className={`font-medium text-sm lg:text-xl ${inView ? 'animate-fade-up' : 'opacity-0'}`}
-          ref={ref}
-        >
+        <div className={`font-medium text-sm lg:text-xl ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
           <HTML text={data[0].text} />
         </div>
         <div
           className={`font-bold italic lg:text-xl flex gap-x-2 max-w-3xl mx-auto ${
             inView ? 'animate-delay-1000 animate-fade' : 'opacity-0'
           }`}
-          ref={ref}
         >
           <span className='opacity-50'>
             <Comillas1 />

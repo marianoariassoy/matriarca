@@ -37,7 +37,7 @@ const Header = () => {
         <div className='flex justify-center '>
           <Link
             href={location === '/' ? '#hero' : '/'}
-            className='hover:text-white/50 transition-all lg:text-xl scroll'
+            className='transition-opacity hover:opacity-70 scroll lg:text-xl'
             id='logo'
           >
             <Logo />
