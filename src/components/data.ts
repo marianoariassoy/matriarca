@@ -121,7 +121,7 @@ export const dataContact = {
     subject: 'Asunto',
     phone: 'Teléfono*',
     country: 'País',
-    message: 'Constula',
+    message: 'Consulta',
     send: 'Enviar',
     thanks: '¡Su mensaje fue enviado! Gracias por contactarte con nosotros.',
     error: 'Se produjo un error al enviar el mensaje :-(',

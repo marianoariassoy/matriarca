@@ -76,7 +76,7 @@ const Popup = () => {
             <div className='aspect-video lg:aspect-[1/1.1]'>
               <img
                 src={url + 'popup.jpg'}
-                className='w-full h-full object-cover'
+                className='w-full h-full object-cover object-top'
               />
             </div>
             <div className='flex flex-col gap-y-3 p-8'>
