@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useDataContext } from '../../context/useDataContext'
@@ -11,17 +11,17 @@ const Popup = () => {
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
-  const [showPopup, setShowPopup] = useState(false)
+  // const [showPopup, setShowPopup] = useState(false)
   const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
 
-  useEffect(() => {
-    const elementoMostrado = localStorage.getItem('showPopupMatriarca')
+  // useEffect(() => {
+  //   const elementoMostrado = localStorage.getItem('showPopupMatriarca')
 
-    if (!elementoMostrado) {
-      setShowPopup(true)
-      localStorage.setItem('showPopupMatriarca', 'true')
-    }
-  }, [])
+  //   if (!elementoMostrado) {
+  //     setShowPopup(true)
+  //     localStorage.setItem('showPopupMatriarca', 'true')
+  //   }
+  // }, [])
 
   const {
     register,
