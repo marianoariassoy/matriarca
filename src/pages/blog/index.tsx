@@ -15,17 +15,25 @@ const Index = () => {
   let dataFilter = []
 
   useEffect(() => {
-    const header = document.getElementById('header-top')
-    const footer = document.getElementById('footer')
-    const menu = document.getElementById('menu')
-    header?.classList.add('bg-secondary')
-    footer?.classList.add('bg-secondary')
-    menu?.classList.add('bg-secondary-opacity')
-
     window.scrollTo(0, 0)
     document.title = 'Matriarca - Blog'
 
+    const header = document.getElementById('header-top')
+    const footer = document.getElementById('footer')
+    const logo = document.getElementById('logo')
+    const menu = document.getElementById('menu')
+
+    header?.classList.remove('py-8')
+    header?.classList.add('py-3')
+    header?.classList.add('bg-secondary')
+    footer?.classList.add('bg-secondary')
+    menu?.classList.add('bg-secondary-opacity')
+    logo?.classList.remove('lg:text-xl')
+
     return () => {
+      header?.classList.remove('py-3')
+      header?.classList.add('py-8')
+      logo?.classList.add('lg:text-xl')
       header?.classList.remove('bg-secondary')
       footer?.classList.remove('bg-secondary')
       menu?.classList.remove('bg-secondary-opacity')
@@ -43,10 +51,10 @@ const Index = () => {
           <BeatLoader color='#475045' />
         </div>
       ) : (
-        <section className='text-secondary mt-28'>
-          <div className='p-6 lg:p-20 flex justify-between gap-6 items-end'>
+        <section className='text-secondary'>
+          <div className='p-6 lg:p-20 lg:pb-16 flex justify-between gap-6 items-end'>
             <div>
-              <h2 className='text-2xl lg:text-5xl font-secondary'>blog</h2>
+              <h2 className='text-xl lg:text-5xl font-secondary'>blog</h2>
               <h1 className='text-3xl lg:text-6xl font-black uppercase'>{dataFilter[0].title}</h1>
             </div>
             <div className='lg:text-3xl font-black'>{dataFilter[0].date}</div>

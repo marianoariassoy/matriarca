@@ -25,7 +25,7 @@ const Hero = () => {
         href='https://tienda.matriarca.com.ar/productos/'
         target='_blank'
         rel='noreferrer'
-        className='z-10 absolute border border-white text-white font-bold bg-primary-opacity rounded-full py-3 px-8 hover:bg-transparent transition-all tracking-widest text-sm lg:text-base fade-in-delay'
+        className='z-10 absolute border border-white text-white font-bold bg-primary-hover rounded-full py-3 px-8  transition-all tracking-widest text-sm lg:text-base fade-in-delay'
       >
         {texts[lan].link}
       </a>

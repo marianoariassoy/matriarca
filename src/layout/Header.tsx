@@ -26,7 +26,7 @@ const Header = () => {
   })
 
   return (
-    <header className='text-white fixed top-0 z-50 w-full'>
+    <header className='text-white z-50 w-full sticky top-0 mb-16'>
       <div
         className='flex items-center justify-between py-8 px-6 lg:px-8 z-10 absolute w-full bg-primary transition-all'
         id='header-top'
@@ -37,7 +37,7 @@ const Header = () => {
         <div className='flex justify-center '>
           <Link
             href={location === '/' ? '#hero' : '/'}
-            className='transition-opacity hover:opacity-70 scroll lg:text-xl'
+            className='transition-all hover:opacity-70 scroll lg:text-xl'
             id='logo'
           >
             <Logo />

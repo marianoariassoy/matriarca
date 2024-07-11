@@ -28,6 +28,7 @@ body {
 .bg-primary,
 .bg-primary-hover:hover {
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 .bg-primary-opacity {
   background-color: rgba(71, 80, 69, 0.8);

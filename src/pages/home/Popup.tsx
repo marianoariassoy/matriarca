@@ -1,27 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useDataContext } from '../../context/useDataContext'
 import { Close } from '../../components/icons'
 import { dataContact } from '../../components/data'
 import BeatLoader from 'react-spinners/BeatLoader'
+import Cookies from 'js-cookie'
 
 const Popup = () => {
   const { lan } = useDataContext()
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
-  // const [showPopup, setShowPopup] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
 
-  // useEffect(() => {
-  //   const elementoMostrado = localStorage.getItem('showPopupMatriarca')
+  useEffect(() => {
+    const popupShown = Cookies.get('popupShown')
 
-  //   if (!elementoMostrado) {
-  //     setShowPopup(true)
-  //     localStorage.setItem('showPopupMatriarca', 'true')
-  //   }
-  // }, [])
+    if (!popupShown) {
+      setIsVisible(true)
+      Cookies.set('popupShown', 'true', { expires: 1 })
+    }
+  }, [])
 
   const {
     register,
@@ -60,66 +61,68 @@ const Popup = () => {
     }
   }
 
-  const closePopup = () => {
-    document.getElementById('popup')!.style.display = 'none'
+  const handleClose = () => {
+    setIsVisible(false)
   }
 
   return (
     <>
-      <div
-        className='fade-in-delay w-full h-full fixed top-0 left-0 z-50 bg-primary-opacity flex items-center justify-center p-6'
-        id='popup'
-      >
-        <div className='bg-white w-full max-w-3xl shadow-lg grid lg:grid-cols-2 relative text-sm lg:text-base'>
-          <div className='aspect-video lg:aspect-[1/1.1]'>
-            <img
-              src={url + 'popup.jpg'}
-              className='w-full h-full object-cover'
-            />
-          </div>
-          <div className='flex flex-col gap-y-3 p-8'>
-            <div className='flex-1 uppercase font-bold text-center flex items-center justify-center'>
-              <span>{texts[lan].text}</span>
+      {isVisible && (
+        <div
+          className='fade-in-delay w-full h-full fixed top-0 left-0 z-50 bg-primary-opacity flex items-center justify-center p-6'
+          id='popup'
+        >
+          <div className='bg-white w-full max-w-3xl shadow-lg grid lg:grid-cols-2 relative text-sm lg:text-base'>
+            <div className='aspect-video lg:aspect-[1/1.1]'>
+              <img
+                src={url + 'popup.jpg'}
+                className='w-full h-full object-cover'
+              />
             </div>
-            <div className='flex items-end'>
-              {error ? (
-                <div className='font-bold text-center px-8'>{dataContact[lan].error}</div>
-              ) : sended ? (
-                <div className='font-bold text-center px-8'>{dataContact[lan].thanks}</div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className='w-full  flex flex-col gap-y-6 items-center justify-center'
-                >
-                  <div className='w-full'>
-                    <input
-                      className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current'
-                      placeholder={texts[lan].textfield}
-                      {...register('email', { required: true })}
-                    />
-                    {errors.email && <Error />}
-                  </div>
-                  <div>
-                    {sending ? (
-                      <BeatLoader />
-                    ) : (
-                      <button className='font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover text-primary hover:text-white text-sm'>
-                        {texts[lan].buttomtext}
-                      </button>
-                    )}
-                  </div>
-                </form>
-              )}
+            <div className='flex flex-col gap-y-3 p-8'>
+              <div className='flex-1 uppercase font-bold text-center flex items-center justify-center'>
+                <span>{texts[lan].text}</span>
+              </div>
+              <div className='flex items-end'>
+                {error ? (
+                  <div className='font-bold text-center px-8'>{dataContact[lan].error}</div>
+                ) : sended ? (
+                  <div className='font-bold text-center px-8'>{dataContact[lan].thanks}</div>
+                ) : (
+                  <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className='w-full  flex flex-col gap-y-6 items-center justify-center'
+                  >
+                    <div className='w-full'>
+                      <input
+                        className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current'
+                        placeholder={texts[lan].textfield}
+                        {...register('email', { required: true })}
+                      />
+                      {errors.email && <Error />}
+                    </div>
+                    <div>
+                      {sending ? (
+                        <BeatLoader />
+                      ) : (
+                        <button className='font-bold rounded-full py-3 px-8 transition-colors border border-primary tracking-widest bg-primary-hover text-primary hover:text-white text-sm'>
+                          {texts[lan].buttomtext}
+                        </button>
+                      )}
+                    </div>
+                  </form>
+                )}
+              </div>
             </div>
+            <button
+              className='absolute top-6 right-6 font-bold text-2xl hover:text-black'
+              onClick={handleClose}
+            >
+              <Close />
+            </button>
           </div>
-          <button
-            className='absolute top-6 right-6 font-bold text-2xl hover:text-black'
-            onClick={closePopup}
-          >
-            <Close />
-          </button>
         </div>
-      </div>
+      )}
     </>
   )
 }

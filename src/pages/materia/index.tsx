@@ -17,6 +17,16 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = 'Matriarca - Materia prima'
+    const header = document.getElementById('header-top')
+    const logo = document.getElementById('logo')
+    header?.classList.remove('py-8')
+    header?.classList.add('py-3')
+    logo?.classList.remove('lg:text-xl')
+    return () => {
+      header?.classList.remove('py-3')
+      header?.classList.add('py-8')
+      logo?.classList.add('lg:text-xl')
+    }
   }, [])
 
   const texts = {
@@ -39,15 +49,18 @@ const Index = () => {
           <BeatLoader color='#475045' />
         </div>
       ) : (
-        <section className='text-primary mt-28'>
-          <div className='p-6 lg:p-20 flex items-center gap-6'>
+        <section className='text-primary'>
+          <div className='p-6 lg:p-20 lg:pb-16 flex items-center gap-6'>
             {dataFilter[0].icon && (
               <div>
-                <img src={dataFilter[0].icon} />
+                <img
+                  src={dataFilter[0].icon}
+                  className='h-14 lg:h-20'
+                />
               </div>
             )}
             <div>
-              <h2 className='text-2xl lg:text-4xl font-secondary'>{texts[lan].title}</h2>
+              <h2 className='text-xl lg:text-4xl font-secondary'>{texts[lan].title}</h2>
               <h1 className='text-3xl lg:text-6xl font-black uppercase'>{dataFilter[0].title}</h1>
             </div>
           </div>

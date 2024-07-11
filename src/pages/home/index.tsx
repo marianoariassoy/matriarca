@@ -13,6 +13,13 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = 'Matriarca'
+    const header = document.querySelector('header')
+    header?.classList.remove('sticky')
+    header?.classList.add('fixed')
+    return () => {
+      header?.classList.remove('fixed')
+      header?.classList.add('sticky')
+    }
   }, [])
 
   return (
