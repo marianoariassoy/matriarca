@@ -16,7 +16,7 @@ const Nav = () => {
 
   return (
     <nav
-      className='absolute hidden fade-in-fast h-screen w-screen top-0 bg-primary'
+      className='absolute hidden fade-in-fast h-screen w-screen top-0 bg-primary-opacity backdrop-blur-lg'
       id='menu'
       onClick={closeMenu}
     >
