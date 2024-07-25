@@ -5,9 +5,9 @@ import HTML from '../../hooks/useHTML'
 const BlogItem = ({ data, button }) => {
   return (
     <article className='py-6 lg:py-12 flex flex-col gap-y-8 text-sm lg:text-base'>
-      <div className='px-6 lg:px-8 py-6 uppercase flex justify-between gap-4 items-start border-b border-white font-black text-base lg:text-3xl relative'>
-        <h2>{data.title}</h2>
-        <h3>{data.date}</h3>
+      <div className='px-6 lg:px-8 py-6 uppercase flex justify-between gap-4 items-start border-b border-white font-black relative'>
+        <h2 className='text-base lg:text-2xl'>{data.title}</h2>
+        <h3 className='lg:text-xl'>{data.date}</h3>
         <div className='absolute w-4 h-4 rounded-full bg-white -bottom-2 -left-2'></div>
       </div>
       <div className='px-6 lg:px-8'>

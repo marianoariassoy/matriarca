@@ -43,7 +43,7 @@ const Header = () => {
             <Logo />
           </Link>
         </div>
-        <div className='flex items-center justify-end gap-x-6 flex-1'>
+        <div className='flex items-center justify-end gap-x-10 flex-1'>
           <Lan />
           <div className='hidden lg:block'>
             <Social />

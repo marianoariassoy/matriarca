@@ -105,7 +105,8 @@ const Form = ({ lan }) => {
             placeholder={dataContact[lan].message}
             {...register('message')}
           />
-          <div className='flex justify-end mt-8'>
+          <div className='flex justify-between mt-8 items-center'>
+            <div className='font-medium'>{dataContact[lan].phone.slice(0, -1)}: +54 9 1159796735</div>
             {sending ? (
               <BeatLoader />
             ) : (

@@ -9,10 +9,12 @@ const Hero = () => {
 
   const texts = {
     es: {
-      link: 'tienda online'
+      link: 'tienda online',
+      url: 'https://tienda.matriarca.com.ar'
     },
     en: {
-      link: 'online store'
+      link: 'online store',
+      url: 'https://www.materart.com/'
     }
   }
 
@@ -22,10 +24,10 @@ const Hero = () => {
       id='hero'
     >
       <a
-        href='https://tienda.matriarca.com.ar/productos/'
+        href={texts[lan].url}
         target='_blank'
         rel='noreferrer'
-        className='z-10 absolute border border-white text-white font-bold bg-primary-hover rounded-full py-3 px-8  transition-all tracking-widest text-sm lg:text-base fade-in-delay'
+        className='z-10 absolute border border-white text-white font-bold  rounded-full py-3 px-8  transition-all tracking-widest text-sm lg:text-base fade-in-delay hover:text-black hover:border-black'
       >
         {texts[lan].link}
       </a>

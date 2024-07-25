@@ -62,7 +62,7 @@ const Comunidad = () => {
 
       <Slide {...sliderProperties}>
         <ComunidadItem1 data={data} />
-        <ComunidadItem2 />
+        <ComunidadItem2 lan={lan} />
         <ComunidadItem3 data={data} />
         <ComunidadItem4 data={data} />
       </Slide>

@@ -57,7 +57,7 @@ const Blog = () => {
           ref={ref}
         >
           <div className='flex flex-col items-center'>
-            <h1 className='text-4xl lg:text-7xl font-thin uppercase tracking-widest'>Matriarca</h1>
+            <h1 className='text-3xl lg:text-5xl font-thin uppercase tracking-widest'>Matriarca</h1>
             <h2 className='font-secondary text-2xl lg:text-4xl'>blog</h2>
           </div>
           <button

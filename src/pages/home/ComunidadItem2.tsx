@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer'
 
-const ComunidadItem2 = () => {
+const ComunidadItem2 = ({ lan }) => {
   const data = [
     {
       title: 'Asociaciones',
@@ -59,7 +59,7 @@ const ComunidadItem2 = () => {
             </div>
             <div className='flex flex-col gap-y-3 py-6 lg:p-6'>
               <div className='text-4xl lg:text-6xl font-bold'>{item.number}</div>
-              <div className='uppercase font-medium tracking-wider'>{item.title}</div>
+              <div className='uppercase font-medium tracking-wider'>{lan === 'es' ? item.title : item.title_en}</div>
             </div>
           </article>
         ))}

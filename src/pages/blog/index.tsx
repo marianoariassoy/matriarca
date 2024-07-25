@@ -72,11 +72,6 @@ const Index = () => {
 
           <div className='p-6 lg:p-20 flex flex-col gap-y-6 lg:gap-y-12 text-sm lg:text-xl'>
             <HTML text={dataFilter[0].shortext} />
-            {dataFilter[0].title2 && (
-              <div>
-                <h2 className='font-black text-xl lg:text-4xl uppercase'>{dataFilter[0].title2}</h2>
-              </div>
-            )}
             <HTML text={dataFilter[0].text} />
           </div>
           <Galeria id={dataFilter[0].id} />

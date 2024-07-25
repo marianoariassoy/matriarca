@@ -51,12 +51,16 @@ const Popup = () => {
   const texts = {
     es: {
       text: 'Resgistrate para recibir todas nuestras novedades',
-      textfield: 'CORREO ELECTRONICO',
+      textfield1: 'CORREO ELECTRONICO',
+      textfield2: 'PAIS',
+      textfield3: 'PROVINCIA',
       buttomtext: 'SUBSCRIBIRME'
     },
     en: {
       text: 'Register to receive all our news',
-      textfield: 'YOUR EMAIL',
+      textfield1: 'YOUR EMAIL',
+      textfield2: 'COUNTRY',
+      textfield3: 'STATE',
       buttomtext: 'SUBSCRIBE'
     }
   }
@@ -93,13 +97,31 @@ const Popup = () => {
                     onSubmit={handleSubmit(onSubmit)}
                     className='w-full  flex flex-col gap-y-6 items-center justify-center'
                   >
-                    <div className='w-full'>
-                      <input
-                        className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current'
-                        placeholder={texts[lan].textfield}
-                        {...register('email', { required: true })}
-                      />
-                      {errors.email && <Error />}
+                    <div className='w-full flex flex-col'>
+                      <div>
+                        <input
+                          className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current focus:outline-none focus:border-black/30'
+                          placeholder={texts[lan].textfield2}
+                          {...register('country', { required: true })}
+                        />
+                        {errors.country && <Error />}
+                      </div>
+                      <div>
+                        <input
+                          className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current focus:outline-none focus:border-black/30'
+                          placeholder={texts[lan].textfield3}
+                          {...register('state', { required: true })}
+                        />
+                        {errors.state && <Error />}
+                      </div>
+                      <div>
+                        <input
+                          className='border-b-2 text-sm border-primary w-full p-2 font-medium text-center placeholder-current focus:outline-none focus:border-black/30'
+                          placeholder={texts[lan].textfield1}
+                          {...register('email', { required: true })}
+                        />
+                        {errors.email && <Error />}
+                      </div>
                     </div>
                     <div>
                       {sending ? (

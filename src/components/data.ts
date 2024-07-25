@@ -1,12 +1,12 @@
-import { Facebook, Instagram } from './icons'
+import { Facebook, Instagram, Tiktok, Pinterest } from './icons'
 
 export const languages = [
   {
-    title: 'esp',
+    title: 'ARG',
     code: 'es'
   },
   {
-    title: 'eng',
+    title: 'WORLDWIDE',
     code: 'en'
   }
 ]
@@ -105,6 +105,16 @@ export const social = [
     title: 'Instagram',
     url: 'https://www.instagram.com/matriarca.artenativo',
     icon: Instagram()
+  },
+  {
+    title: 'Tiktok',
+    url: 'https://www.tiktok.com/@matriarcanativeart?_t=8o97gfdQXwG&amp;_r=1',
+    icon: Tiktok()
+  },
+  {
+    title: 'Pinterest',
+    url: 'https://pin.it/4ex9WpURo',
+    icon: Pinterest()
   }
 ]
 
