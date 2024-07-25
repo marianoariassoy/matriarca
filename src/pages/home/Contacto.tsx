@@ -9,7 +9,7 @@ const Contacto = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.3
+    threshold: 0.1
   })
 
   useEffect(() => {
@@ -29,6 +29,7 @@ const Contacto = () => {
     <section
       className='my-20 lg:my-32'
       id='contacto'
+      ref={ref}
     >
       <div className='w-full max-w-4xl mx-auto text-primary flex flex-col gap-y-8'>
         <h1
@@ -38,10 +39,7 @@ const Contacto = () => {
         >
           {texts[lan].title}
         </h1>
-        <div
-          className={`mt-8 px-6 ${inView ? 'animate-fade-up' : 'opacity-0'}`}
-          ref={ref}
-        >
+        <div className={`mt-8 px-6 ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
           <Form lan={lan} />
         </div>
       </div>

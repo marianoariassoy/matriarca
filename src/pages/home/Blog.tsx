@@ -12,7 +12,7 @@ const Blog = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.3
+    threshold: 0.1
   })
 
   if (loading)
@@ -48,13 +48,13 @@ const Blog = () => {
     <section
       className='bg-secondary'
       id='blog'
+      ref={ref}
     >
       <div className='w-full grid grid-cols-1 lg:grid-cols-2 text-white'>
         <div
           className={`flex flex-col justify-center items-center gap-y-12 lg:h-screen pt-14 ${
             inView ? 'animate-fade-right' : 'opacity-0'
           }`}
-          ref={ref}
         >
           <div className='flex flex-col items-center'>
             <h1 className='text-3xl lg:text-5xl font-thin uppercase tracking-widest'>Matriarca</h1>

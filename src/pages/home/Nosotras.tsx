@@ -13,7 +13,7 @@ const Nosotras = () => {
 
   const [ref, inView] = useInView({
     triggerOnce: false,
-    threshold: 0.3
+    threshold: 0.2
   })
 
   const [ref2, inView2] = useInView({
