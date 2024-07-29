@@ -60,7 +60,6 @@ const Nosotras = () => {
           className={`text-4xl lg:text-7xl font-thin uppercase tracking-widest ${
             inView ? 'animate-fade' : 'opacity-0'
           }`}
-          ref={ref}
         >
           {texts[lan].title}
         </h1>

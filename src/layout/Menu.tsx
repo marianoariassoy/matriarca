@@ -14,6 +14,15 @@ const Nav = () => {
     menu?.classList.toggle('hidden')
   }
 
+  const ishome =
+    location === '/' ||
+    location === '/tienda' ||
+    location === '/nosotras' ||
+    location === '/materia-prima' ||
+    location === '/comunidad' ||
+    location === '/blog' ||
+    location === '/contacto'
+
   return (
     <nav
       className='absolute hidden fade-in-fast h-screen w-screen top-0 bg-primary-opacity backdrop-blur-lg'
@@ -26,7 +35,7 @@ const Nav = () => {
             {menu.map((item, index) => (
               <li key={index}>
                 <Link
-                  href={location === '/' ? item.path : '/'}
+                  href={ishome ? item.path : '/' + item.path.slice(1)}
                   className={`hover:text-white/50 transition-all scroll ${
                     index > 0 && index < 4 ? 'font-normal' : 'font-bold '
                   }`}

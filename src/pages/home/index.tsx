@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useLocation } from 'wouter'
 import Layout from '../../layout/Layout'
 import Blog from './Blog'
 import Comunidad from './Comunidad'
@@ -10,8 +11,9 @@ import Contacto from './Contacto'
 import Popup from './Popup'
 
 const Index = () => {
+  const [location] = useLocation()
+
   useEffect(() => {
-    window.scrollTo(0, 0)
     document.title = 'Matriarca'
     const header = document.querySelector('header')
     header?.classList.remove('sticky')
@@ -21,6 +23,16 @@ const Index = () => {
       header?.classList.add('sticky')
     }
   }, [])
+
+  useEffect(() => {
+    if (location === '/') return
+    const target = location.replace('/', '#') as string
+    const targetElement = document.querySelector(`${target}`) as HTMLElement
+    window.scrollTo({
+      top: targetElement?.offsetTop,
+      behavior: 'smooth'
+    })
+  }, [location])
 
   return (
     <Layout>
