@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { useDataContext } from '../../context/useDataContext'
 import BlogItem from './BlogItem'
-import { useState } from 'react'
 import BeatLoader from 'react-spinners/BeatLoader'
 import useFetch from '../../hooks/useFetch'
 import { useInView } from 'react-intersection-observer'
@@ -45,53 +45,50 @@ const Blog = () => {
     })
   }
   return (
-    <section
-      className='bg-secondary'
-      id='blog'
+    <div
+      className='w-full grid grid-cols-1 lg:grid-cols-2 text-white'
       ref={ref}
     >
-      <div className='w-full grid grid-cols-1 lg:grid-cols-2 text-white'>
-        <div
-          className={`flex flex-col justify-center items-center gap-y-12 lg:h-screen pt-14 ${
-            inView ? 'animate-fade-right' : 'opacity-0'
-          }`}
-        >
-          <div className='flex flex-col items-center'>
-            <h1 className='text-3xl lg:text-5xl font-thin uppercase tracking-widest'>Matriarca</h1>
-            <h2 className='font-secondary text-2xl lg:text-4xl'>blog</h2>
-          </div>
-          <button
-            onClick={showMore}
-            className='text-secondary font-bold rounded-full py-3 px-8 transition-colors tracking-widest bg-white hover:text-white bg-primary-hover hidden lg:block'
-          >
-            {texts[lan].link}
-          </button>
+      <div
+        className={`flex flex-col justify-center items-center gap-y-12 lg:h-screen pt-14 ${
+          inView ? 'animate-fade-right' : 'opacity-0'
+        }`}
+      >
+        <div className='flex flex-col items-center'>
+          <h1 className='text-3xl lg:text-5xl font-thin uppercase tracking-widest'>Matriarca</h1>
+          <h2 className='font-secondary text-2xl lg:text-4xl'>blog</h2>
         </div>
-        <div
-          className={`flex flex-col lg:border-l border-white lg:pt-12 pb-12 ${
-            inView ? 'animate-fade-left' : 'opacity-0'
-          }`}
+        <button
+          onClick={showMore}
+          className='text-secondary font-bold rounded-full py-3 px-8 transition-colors tracking-widest bg-white hover:text-white bg-primary-hover hidden lg:block'
         >
-          {data.slice(0, showItems).map(item => (
-            <BlogItem
-              key={item.id}
-              data={item}
-              button={texts[lan].button}
-            />
-          ))}
-          {showItems < data.length && (
-            <div className='flex justify-center py-12'>
-              <button
-                onClick={showMore}
-                className='text-secondary font-bold rounded-full py-3 px-8 transition-colors tracking-widest bg-white hover:text-white bg-primary-hover'
-              >
-                {texts[lan].link2}
-              </button>
-            </div>
-          )}
-        </div>
+          {texts[lan].link}
+        </button>
       </div>
-    </section>
+      <div
+        className={`flex flex-col lg:border-l border-white lg:pt-12 pb-12 ${
+          inView ? 'animate-fade-left' : 'opacity-0'
+        }`}
+      >
+        {data.slice(0, showItems).map(item => (
+          <BlogItem
+            key={item.id}
+            data={item}
+            button={texts[lan].button}
+          />
+        ))}
+        {showItems < data.length && (
+          <div className='flex justify-center py-12'>
+            <button
+              onClick={showMore}
+              className='text-secondary font-bold rounded-full py-3 px-8 transition-colors tracking-widest bg-white hover:text-white bg-primary-hover'
+            >
+              {texts[lan].link2}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 

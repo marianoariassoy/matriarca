@@ -29,7 +29,7 @@ const Index = () => {
     const target = location.replace('/', '#') as string
     const targetElement = document.querySelector(`${target}`) as HTMLElement
     window.scrollTo({
-      top: targetElement?.offsetTop,
+      top: targetElement?.offsetTop - 80,
       behavior: 'smooth'
     })
   }, [location])
@@ -37,12 +37,39 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
-      <Tienda />
-      <Nosotras />
-      <MateriaPrima />
-      <Comunidad />
-      <Blog />
-      <Contacto />
+      <section id='tienda'>
+        <Tienda />
+      </section>
+      <section
+        className='py-12 px-6 lg:px-8'
+        id='nosotras'
+      >
+        <Nosotras />
+      </section>
+      <section
+        className='pb-12 lg:mt-12 lg:pb-20'
+        id='materia-prima'
+      >
+        <MateriaPrima />
+      </section>
+      <section
+        className='relative lg:h-screen w-screen comunidad-item py-12 lg:py-0'
+        id='comunidad'
+      >
+        <Comunidad />
+      </section>
+      <section
+        className='bg-secondary'
+        id='blog'
+      >
+        <Blog />
+      </section>
+      <section
+        className='my-20 lg:my-32'
+        id='contacto'
+      >
+        <Contacto />
+      </section>
       <Popup />
     </Layout>
   )

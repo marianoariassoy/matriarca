@@ -34,10 +34,7 @@ const MateriaPrima = () => {
   }
 
   return (
-    <section
-      className='pb-12 lg:mt-12 lg:pb-20'
-      id='materia-prima'
-    >
+    <>
       <div className='bg-primary text-white py-14 lg:py-20 px-4 text-center'>
         <div
           className={` ${inView ? 'animate-fade-up' : 'opacity-0'}`}
@@ -61,7 +58,7 @@ const MateriaPrima = () => {
             />
           ))}
       </div>
-    </section>
+    </>
   )
 }
 

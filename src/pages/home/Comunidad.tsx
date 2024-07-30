@@ -51,10 +51,7 @@ const Comunidad = () => {
   }
 
   return (
-    <section
-      className='relative lg:h-screen w-screen comunidad-item py-12 lg:py-0'
-      id='comunidad'
-    >
+    <>
       <div className='lg:absolute px-6 right-20 top-32 flex flex-col z-10'>
         <h1 className='text-4xl lg:text-6xl font-thin uppercase tracking-widest'>{texts[lan].title}</h1>
         <h2 className='font-secondary text-3xl lg:text-4xl'>{texts[lan].title2}</h2>
@@ -66,7 +63,7 @@ const Comunidad = () => {
         <ComunidadItem3 data={data} />
         <ComunidadItem4 data={data} />
       </Slide>
-    </section>
+    </>
   )
 }
 

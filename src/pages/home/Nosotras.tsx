@@ -50,12 +50,11 @@ const Nosotras = () => {
   ]
 
   return (
-    <section
-      className='py-12 px-6 lg:px-8'
-      id='nosotras'
-      ref={ref}
-    >
-      <div className='w-full max-w-4xl mx-auto text-center text-primary flex flex-col gap-y-8'>
+    <>
+      <div
+        className='w-full max-w-4xl mx-auto text-center text-primary flex flex-col gap-y-8'
+        ref={ref}
+      >
         <h1
           className={`text-4xl lg:text-7xl font-thin uppercase tracking-widest ${
             inView ? 'animate-fade' : 'opacity-0'
@@ -100,7 +99,7 @@ const Nosotras = () => {
           </article>
         ))}
       </div>
-    </section>
+    </>
   )
 }
 

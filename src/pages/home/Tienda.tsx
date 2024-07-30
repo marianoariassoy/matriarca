@@ -43,7 +43,7 @@ const Tienda = () => {
   ]
 
   return (
-    <section id='tienda'>
+    <>
       <div className='w-full p-6 lg:p-8 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6'>
         {data.map((item, index) => (
           <TiendaItem
@@ -66,7 +66,7 @@ const Tienda = () => {
           {texts[lan].link2}
         </a>
       </div>
-    </section>
+    </>
   )
 }
 
