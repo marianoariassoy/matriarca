@@ -23,28 +23,28 @@ export const menu = [
   },
   {
     es: {
-      title: 'Indumentaria'
+      title: 'Deco'
     },
     en: {
-      title: 'Clothing'
+      title: 'Deco'
     },
     path: '#tienda'
   },
   {
     es: {
-      title: 'Hogar'
+      title: 'Vestir'
     },
     en: {
-      title: 'Home'
+      title: 'Wear'
     },
     path: '#tienda'
   },
   {
     es: {
-      title: 'Capsulas'
+      title: 'Accesorios'
     },
     en: {
-      title: 'Capsules'
+      title: 'Accessories'
     },
     path: '#tienda'
   },
