@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer'
 
 const Nosotras = () => {
   const { lan } = useDataContext()
-  const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
+  const url = 'https://matriarca.com.ar/backend/images-static/'
   const { data, loading } = useFetch(`/textos/${lan}`)
 
   const [ref, inView] = useInView({
