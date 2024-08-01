@@ -28,9 +28,7 @@ const Form = ({ lan }) => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
 
-    //sales@matriarca.org
-
-    axios.post(' ', { ...data }).then(data => {
+    axios.post('https://matriarca.com.ar/backend/send-email.php', { ...data }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -48,9 +46,9 @@ const Form = ({ lan }) => {
   return (
     <>
       {error ? (
-        <span className='text-2xl font-bold'>{dataContact[lan].error}</span>
+        <div className='text-2xl text-center font-bold'>{dataContact[lan].error}</div>
       ) : sended ? (
-        <span className='text-3xl font-bold'>{dataContact[lan].thanks}</span>
+        <div className='text-3xl text-center font-bold'>{dataContact[lan].thanks}</div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className='grid grid-cols-2 gap-4 text-sm lg:text-base'>

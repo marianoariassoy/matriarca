@@ -45,7 +45,7 @@ const Comunidad = () => {
       title2: 'matriarca'
     },
     en: {
-      title: 'Community',
+      title: 'Comunidad',
       title2: 'matriarca'
     }
   }

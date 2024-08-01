@@ -17,7 +17,7 @@ export const menu = [
       title: 'Tienda'
     },
     en: {
-      title: 'Shop'
+      title: 'Store'
     },
     path: '#tienda'
   },
@@ -133,20 +133,22 @@ export const dataContact = {
     country: 'País',
     message: 'Consulta',
     send: 'Enviar',
-    thanks: '¡Su mensaje fue enviado! Gracias por contactarte con nosotros.',
+    thanks: '¡Su mensaje fue enviado!',
+    thanks2: '¡Tus datos fueron enviados!',
     error: 'Se produjo un error al enviar el mensaje :-(',
     required: 'Por favor completá este dato'
   },
   en: {
-    name: 'Name and surname*',
+    name: 'Full Name*',
     city: 'City',
-    email: 'E-Mail*',
+    email: 'E-Mail Address*',
     subject: 'Subject',
-    phone: 'Phone*',
+    phone: 'Phone Number*',
     country: 'Country',
     message: 'Message',
     send: 'Send',
-    thanks: 'Your message was sent! Thank you for contacting us.',
+    thanks: 'Your message was sent!',
+    thanks2: 'Your data was sent!',
     error: 'An error occurred while sending the message :-(',
     required: 'Please complete this field'
   }

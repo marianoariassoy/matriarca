@@ -13,7 +13,7 @@ const Popup = () => {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const url = 'https://marianoarias.soy/sites/matriarca-backend/images-static/'
+  const url = 'https://matriarca.com.ar/backend/images-static/'
 
   useEffect(() => {
     const popupShown = Cookies.get('popupShown')
@@ -33,7 +33,7 @@ const Popup = () => {
   const onSubmit = (data: { email: string }) => {
     setSending(true)
 
-    axios.post(' ', { ...data }).then(data => {
+    axios.post('https://matriarca.com.ar/backend/send-email-newsletter.php', { ...data }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -57,8 +57,8 @@ const Popup = () => {
       buttomtext: 'SUBSCRIBIRME'
     },
     en: {
-      text: 'Register to receive all our news',
-      textfield1: 'YOUR EMAIL',
+      text: 'Subscribe to our newsletter',
+      textfield1: 'E-MAIL',
       textfield2: 'COUNTRY',
       textfield3: 'STATE',
       buttomtext: 'SUBSCRIBE'
@@ -89,9 +89,9 @@ const Popup = () => {
               </div>
               <div className='flex items-end'>
                 {error ? (
-                  <div className='font-bold text-center px-8'>{dataContact[lan].error}</div>
+                  <div className='font-bold text-center px-8 w-full'>{dataContact[lan].error}</div>
                 ) : sended ? (
-                  <div className='font-bold text-center px-8'>{dataContact[lan].thanks}</div>
+                  <div className='font-bold text-center px-8 w-full'>{dataContact[lan].thanks2}</div>
                 ) : (
                   <form
                     onSubmit={handleSubmit(onSubmit)}

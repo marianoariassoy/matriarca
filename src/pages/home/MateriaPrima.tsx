@@ -27,9 +27,9 @@ const MateriaPrima = () => {
       link: 'conocer más'
     },
     en: {
-      title: 'Material',
-      title2: 'primary',
-      link: 'know more'
+      title: 'Raw',
+      title2: 'material',
+      link: 'learn more'
     }
   }
 

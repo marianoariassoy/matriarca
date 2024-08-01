@@ -13,7 +13,7 @@ const Tienda = () => {
     },
     en: {
       link: 'view',
-      link2: 'view store',
+      link2: 'online store',
       url: 'https://www.materart.com/'
     }
   }
@@ -37,7 +37,7 @@ const Tienda = () => {
       title: 'Accesorios',
       title_en: 'Accessories',
       image: url + 'capsulas.jpg',
-      url: 'https://tienda.matriarca.com.ar/capsulas-especiales/',
+      url: 'https://tienda.matriarca.com.ar/accesorios1/',
       url_en: 'https://www.materart.com/collections/accessories'
     }
   ]
